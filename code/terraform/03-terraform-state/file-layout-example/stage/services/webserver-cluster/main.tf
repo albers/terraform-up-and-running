@@ -137,3 +137,11 @@ resource "aws_security_group" "alb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+data "terraform_remote_state" "db" {
+  backend = "s3"
+
+  config {
+    bucket =
+  }
+}
